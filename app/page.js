@@ -1,9 +1,14 @@
+"use client";
 import Image from "next/image";
+import Todo from "./components/Todo";
+import { Provider } from "react-redux";
 
+import { store } from "./store";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>home redux</h1>
-    </main>
+    <Provider store={store}>
+      {" "}
+      <Todo />
+    </Provider>
   );
 }
