@@ -17,12 +17,11 @@ export const todoSlice = createSlice({
       const todo = { id: nanoid(), text: action.payload };
       state.todos.push(todo);
     },
-    removeTodo: (state, action) => {
-      state.todos = state.todos.filter((todo) => {
-        todo.id !== action.payload.id;
-      });
-    },
 
+    removeTodo: (state, action) => {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+      console.log("Removed Todo:", state.todos);
+    },
     updateTodo: (state, action) => {
       const uptodo = state.todos.filter((todo) => {
         todo.id === action.payload.id;

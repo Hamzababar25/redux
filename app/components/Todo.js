@@ -44,6 +44,7 @@ function Todo() {
           todos.map((todo) => (
             <li key={todo.id}>
               {todo.text}
+
               <button onClick={() => dispatch(removeTodo(todo.id))}>x</button>
             </li>
           ))}
